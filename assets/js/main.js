@@ -51,4 +51,33 @@
       }
     });
   });
+
+  // Set default playback speed to 2x for all videos
+  function setVideoSpeed(video) {
+    video.playbackRate = 2.0;
+    console.log(`Video speed set to ${video.playbackRate}x`);
+  }
+
+  // Apply 2x speed to all videos
+  document.querySelectorAll('video').forEach(video => {
+    // Set speed immediately if video is ready
+    if (video.readyState >= 1) {
+      setVideoSpeed(video);
+    }
+    
+    // Set speed when metadata loads
+    video.addEventListener('loadedmetadata', () => {
+      setVideoSpeed(video);
+    });
+    
+    // Set speed when video can play
+    video.addEventListener('canplay', () => {
+      setVideoSpeed(video);
+    });
+    
+    // Set speed when video starts playing
+    video.addEventListener('play', () => {
+      setVideoSpeed(video);
+    });
+  });
 })();
