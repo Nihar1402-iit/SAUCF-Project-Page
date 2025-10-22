@@ -22,7 +22,7 @@
           <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
           <ul id="nav-menu" class="nav-list">
             <li><a href="#overview">Overview</a></li>
-            <!-- <li><a href="#paper">Paper</a></li> -->
+            <li><a href="#paper">Paper</a></li>
             <li><a href="#methodology">Methodology</a></li>
             <li><a href="#results">Results</a></li>
             <li><a href="#simulations">Simulations</a></li>
@@ -38,37 +38,17 @@
       <section id="overview" class="section hero">
         <div class="container">
           <h1>SAUCF: Research Project Page</h1>
-          
-          <div class="abstract-section">
-            <h2>Abstract</h2>
-            <p class="abstract-text">
-              Precision agriculture increasingly recognizes the transformative potential of unmanned aerial systems (UAS) for crop monitoring and field assessment, yet research consistently highlights significant usability barriers as the main constraints to widespread adoption. Complex mission planning processes, including detailed flight plan creation and waypoint management, pose substantial technical challenges that mainly affect non-expert operators. Farmers and their teams generally prefer user-friendly, straightforward tools, as evidenced by the rapid adoption of GPS guidance systems, which underscores the need for simpler mission planning in UAS operations. To enhance accessibility and safety in UAS control, especially for non-expert operators in agriculture and related fields, we propose a Secure UAS Control Framework (SAUCF): a comprehensive system for natural-language-driven UAS mission management with integrated dual-factor biometric authentication. The framework converts spoken user instructions into executable flight plans by leveraging a language-model-powered mission planner that interprets transcribed voice commands and generates context-aware operational directives, including takeoff, location monitoring, return-to-home, and landing operations. Mission orchestration is performed through a large language model (LLM) agent, coupled with a human-in-the-loop supervision mechanism that enables operators to review, adjust, or confirm mission plans before deployment. Additionally, SAUCF offers a manual override feature, allowing users to assume direct control or interrupt missions at any stage, ensuring safety and adaptability in dynamic environments. Proof-of-concept demonstrations on a UAS platform with on-board computing validated reliable speech-to-text transcription, biometric verification via voice matching and face authentication, and effective Sim2Real transfer of natural-language-driven mission plans from simulation environments to physical UAS operations. Initial evaluations showed that SAUCF reduced mission planning time, minimized command errors, and simplified complex multi-objective workflows compared to traditional waypoint-based tools, though comprehensive field validation remains necessary to confirm these preliminary findings. The integration of natural-language-based interaction, real-time identity verification, human-in-the-loop LLM orchestration, and manual override capabilities allows SAUCF to significantly lower the technical barrier to UAS operation while ensuring mission security, operational reliability, and operator agency in real-world conditions. Findings lay the groundwork for systematic field trials and suggest that prioritizing ease of operation in mission planning can drive broader deployment of UAS technologies.
-            </p>
-            
-            <div class="keywords-section">
-              <h3>Keywords</h3>
-              <div class="keywords-pills">
-                <button class="keyword-pill" data-keyword="Large Language Models">Large Language Models</button>
-                <button class="keyword-pill" data-keyword="Unmanned Aerial Systems">Unmanned Aerial Systems</button>
-                <button class="keyword-pill" data-keyword="Simulation Testing">Simulation Testing</button>
-                <button class="keyword-pill" data-keyword="Mission Planning">Mission Planning</button>
-                <button class="keyword-pill" data-keyword="Sim-to-Real">Sim-to-Real</button>
-                <button class="keyword-pill" data-keyword="Human-in-the-loop Control">Human-in-the-loop Control</button>
-              </div>
-            </div>
-          </div>
-          
           <p class="lead">
             This page accompanies the paper and showcases methodology details, key results,
             simulation demos, and on‑field testing videos.
           </p>
           <div class="cta-row">
-            <!-- <a class="btn primary" href="#paper">Read the Paper</a> -->
+            <a class="btn primary" href="#paper">Read the Paper</a>
             <a class="btn" href="#simulations">View Simulations</a>
           </div>
         </div>
       </section>
-<!-- 
+
       <section id="paper" class="section">
         <div class="container">
           <div class="section-header">
@@ -87,7 +67,7 @@
             ></iframe>
           </div>
         </div>
-      </section> -->
+      </section>
 
       <section id="methodology" class="section">
         <div class="container">

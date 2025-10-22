@@ -34,4 +34,21 @@
       navToggle.setAttribute('aria-expanded', 'false');
     }));
   }
+
+  // Scopus keyword search
+  function searchScopus(keyword) {
+    const encodedKeyword = encodeURIComponent(keyword);
+    const scopusUrl = `https://www.scopus.com/results/results.uri?sort=plf-f&src=s&st1=${encodedKeyword}&sot=b&sdt=b&sl=25&s=TITLE-ABS-KEY%28${encodedKeyword}%29&origin=searchbasic`;
+    window.open(scopusUrl, '_blank', 'noopener,noreferrer');
+  }
+
+  // Add event listeners to keyword pills
+  document.querySelectorAll('.keyword-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const keyword = pill.getAttribute('data-keyword');
+      if (keyword) {
+        searchScopus(keyword);
+      }
+    });
+  });
 })();
