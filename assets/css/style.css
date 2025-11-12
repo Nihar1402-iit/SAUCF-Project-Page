@@ -155,6 +155,166 @@ img, video, iframe { max-width: 100%; display: block; }
 .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 .skip-link:focus { position: static; width: auto; height: auto; background: var(--primary); color: #fff; padding: 6px 10px; border-radius: 8px; }
 
+/* Methodology Section Styles */
+.methodology-summary {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.methodology-summary h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.innovation-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.innovation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.innovation-card h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.innovation-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Key points list styling */
+.key-points {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.key-points li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text);
+}
+
+.key-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Detailed Methodology Page Styles */
+.methodology-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.methodology-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.methodology-content .lead {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.methodology-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.methodology-content h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.methodology-content code {
+  background: var(--card);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 0.9em;
+  border: 1px solid var(--border);
+}
+
+.methodology-content ol {
+  padding-left: 1.5rem;
+}
+
+.methodology-content ol li {
+  margin: 0.5rem 0;
+  color: var(--text);
+}
+
+.active {
+  font-weight: 600;
+  color: var(--primary) !important;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.methodology-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 /* Mobile nav */
 @media (max-width: 760px) {
   .nav-toggle { display: inline-block; background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }

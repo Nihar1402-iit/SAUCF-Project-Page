@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAUCF Methodology | Detailed Framework</title>
+    <meta name="description" content="Detailed methodology for SAUCF: system architecture, implementation, and validation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#methodology">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" class="title">SAUCF</a>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+          <ul id="nav-menu" class="nav-list">
+            <li><a href="index.html#overview">Overview</a></li>
+            <li><a href="index.html#methodology">Methodology</a></li>
+            <li><a href="index.html#simulations">Simulations</a></li>
+            <li><a href="index.html#field-tests">On‑Field Tests</a></li>
+            <li><a href="methodology-detailed.html" class="active">Detailed Methodology</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="methodology" class="section">
+        <div class="container">
+          <h1>🧭 Methodology</h1>
+          <p class="lead">Comprehensive technical framework for the Secure Agricultural UAS Control Framework (SAUCF)</p>
+
+          <div class="methodology-content">
+            <h2>Overview</h2>
+            <p>
+              The <strong>Secure Agricultural UAS Control Framework (SAUCF)</strong> is a 
+              <strong>voice-driven, secure, and human-in-the-loop drone system</strong> designed 
+              for agricultural operations. It enables operators to control UAS missions through 
+              natural language commands while maintaining safety, authentication, and reliability.
+            </p>
+            <ul class="key-points">
+              <li>🧑‍🌾 Reduce complexity for non-expert operators</li>
+              <li>🔐 Ensure secure access and mission auditability</li>
+              <li>🧠 Preserve human authority and oversight</li>
+            </ul>
+
+            <h2>🏗️ System Architecture</h2>
+            <figure class="media-card">
+              <img src="arch.png" alt="SAUCF System Architecture" />
+              <figcaption><strong>Figure 1:</strong> Secure Agricultural UAS Control Framework (SAUCF) Architecture</figcaption>
+            </figure>
+            <p>
+              The system consists of six integrated components forming a secure pipeline:
+            </p>
+            <ol>
+              <li>Multi-modal biometric authentication</li>
+              <li>Voice command processing (ASR)</li>
+              <li>Natural language intent parsing (LLM)</li>
+              <li>Automated mission planning</li>
+              <li>Mission visualization and approval</li>
+              <li>Supervised onboard execution with telemetry monitoring</li>
+            </ol>
+
+            <h2>🔐 Security & Authentication</h2>
+            <h3>Multi-Modal Biometric Verification</h3>
+            <p>
+              SAUCF employs a <strong>dual-factor biometric system</strong> combining 
+              <strong>voice and face authentication</strong> using modules from 
+              <em>Kaizen Voiz</em>. These modules are embedded into the interface, enabling
+              secure operator verification and safe access control.
+            </p>
+
+            <h2>🗣️ Natural Language Processing Pipeline</h2>
+            <h3>1. Voice Command Acquisition</h3>
+            <p>
+              Operators issue voice instructions (e.g., "Perform a mapping mission over the north field"),
+              which are processed by <strong>Whisper ASR</strong> running on a GPU-enabled 
+              <em>Jetson Nano</em>. This ensures low-latency, high-accuracy transcription of audio into text.
+            </p>
+
+            <h3>2. Intent Parsing with LLM (GPT-4)</h3>
+            <p>
+              The system uses <strong>GPT-4 with function calling</strong> to interpret commands 
+              into structured mission parameters. Few-shot prompting maintains agricultural context, 
+              while built-in safety checks prevent unsafe operations.
+            </p>
+            <p>
+              For instance, when a user specifies a large field (&gt;4 ha or &gt;6 ha), 
+              the system issues warnings about flight time or battery capacity and asks for 
+              explicit operator confirmation before continuing.
+            </p>
+
+            <h2>🧮 Automated Mission Planning</h2>
+            <h3>1. Flight Pattern Optimization</h3>
+            <p>
+              Using the open-source <code>uas-flightplan</code> Python library, the planner 
+              automatically generates efficient waypoint grids (lawnmower or spiral patterns),
+              optimizing for altitude, overlap, and energy efficiency.
+            </p>
+
+            <h3>2. Mission Serialization & Visualization</h3>
+            <p>
+              The system outputs flight plans as <code>.kml</code> files and generates
+              interactive <code>.html</code> visualizations overlayed on satellite imagery.
+              This allows users to verify and adjust coverage patterns before deployment.
+            </p>
+
+            <h2>🚁 Onboard Execution & Safety Monitoring</h2>
+            <figure class="media-card">
+              <img src="hardware.png" alt="Jetson Nano Integrated with DJI M300 RTK" />
+              <figcaption><strong>Figure 2:</strong> Jetson Nano integrated with DJI M300 RTK</figcaption>
+            </figure>
+            <p>
+              The <strong>NVIDIA Jetson Nano</strong> companion computer executes missions via 
+              <strong>DJI's Onboard SDK (OSDK)</strong>. It communicates with the flight controller
+              using an FT232 serial adapter through the DJI E-Port interface for real-time control.
+            </p>
+
+            <h3>Decision Tree-Based Safeguards</h3>
+            <figure class="media-card">
+              <img src="decision-tree.png" alt="Decision Tree for Mission Execution" />
+              <figcaption><strong>Figure 3:</strong> Decision Tree for Mission Execution with Integrated Safeguards</figcaption>
+            </figure>
+            <ul class="key-points">
+              <li>Pre-flight checks for battery, GPS fix, and payload status</li>
+              <li>Continuous telemetry validation and safety guard enforcement</li>
+              <li>Automatic abort below 30% battery threshold</li>
+              <li>Reactive contingency handling and Return-to-Home sequences</li>
+            </ul>
+
+            <h3>Human-in-the-Loop Safety</h3>
+            <p>
+              The framework ensures manual confirmation before arming or takeoff, with 
+              continuous telemetry (GPS, altitude, battery, mode) streamed to ground control 
+              via Wi-Fi. RC-based override is always active for immediate intervention, 
+              and all events are logged for compliance.
+            </p>
+
+            <h2>⚙️ Implementation Stack</h2>
+            <h3>Hardware Setup</h3>
+            <ul class="key-points">
+              <li><strong>Jetson Nano</strong> (GPU-enabled companion computer)</li>
+              <li><strong>DJI Matrice 300 RTK</strong> with DJI OSDK</li>
+              <li><strong>USB Microphone</strong> for audio capture</li>
+              <li><strong>Camera</strong> for face authentication</li>
+              <li><strong>FT232 Serial Adapter</strong> via DJI E-Port</li>
+            </ul>
+
+            <h3>Software Stack</h3>
+            <ul class="key-points">
+              <li>OS: Ubuntu Linux on Jetson</li>
+              <li>ASR: Whisper (GPU-accelerated Python)</li>
+              <li>Intent Parsing: GPT-4 API via JSON/HTTP</li>
+              <li>Mission Planning: Python <code>uas-flightplan</code> library</li>
+              <li>Flight Control: Custom C++ apps built on DJI OSDK</li>
+              <li>Integration: Lightweight file & serial message protocols</li>
+            </ul>
+
+            <h3>Communication Protocols</h3>
+            <figure class="media-card">
+              <img src="arch-detailed.png" alt="System Integration and Communication Protocols" />
+              <figcaption><strong>Figure 4:</strong> System Integration and Communication Protocols</figcaption>
+            </figure>
+            <ul class="key-points">
+              <li>LLM API: JSON over HTTP</li>
+              <li>ASR Output: Plain-text messages</li>
+              <li>Mission Planning: File-based KML/JSON exchange</li>
+              <li>Flight Control: Serial SDK APIs for deterministic telemetry</li>
+            </ul>
+
+            <h2>🧩 Validation & Testing</h2>
+            <h3>Simulation-to-Reality Transfer</h3>
+            <p>
+              Initial missions are tested in the <strong>DJI Assistant 2 (Enterprise Edition)</strong> simulator. 
+              After validation, they are executed on physical fields to ensure accurate simulation-to-field alignment.
+            </p>
+
+            <h3>Performance Metrics</h3>
+            <ul class="key-points">
+              <li><strong>Mission Planning Efficiency:</strong> Time from voice input to deployable mission</li>
+              <li><strong>Decision Tree Compliance:</strong> Conformance of executed behavior to safety logic</li>
+              <li><strong>Command Interpretation Accuracy:</strong> Frequency of manual corrections</li>
+              <li><strong>Authentication Reliability:</strong> FAR and FRR across modalities</li>
+              <li><strong>Execution Consistency:</strong> GPS trajectory comparison (simulation vs. field)</li>
+            </ul>
+
+            <h2>🌾 Summary</h2>
+            <p>
+              The SAUCF establishes a <strong>secure, modular, and extensible framework</strong> for intelligent, 
+              human-supervised drone operations in agriculture. It combines biometric authentication, 
+              LLM-driven language understanding, and autonomous mission planning to achieve:
+            </p>
+            <ul class="key-points">
+              <li>🚀 Simplified mission control for non-technical users</li>
+              <li>✅ High reliability and safety compliance</li>
+              <li>📡 Real-time human oversight with full auditability</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> SAUCF Project. Built with GitHub Pages.
+          <a href="index.html" style="margin-left: 1rem;">← Back to Main Page</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -23,7 +23,7 @@
           <ul id="nav-menu" class="nav-list">
             <li><a href="#overview">Overview</a></li>
             <!-- <li><a href="#paper">Paper</a></li> -->
-            <!-- <li><a href="#methodology">Methodology</a></li> -->
+            <li><a href="#methodology">Methodology</a></li>
             <!-- <li><a href="#results">Results</a></li> -->
             <li><a href="#simulations">Simulations</a></li>
             <li><a href="#field-tests">On‑Field Tests</a></li>
@@ -58,76 +58,121 @@
           </div>
         </div>
       </section>
-<!-- 
-      <section id="paper" class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2>Paper</h2>
-            <p>Inline reader and download for the final manuscript.</p>
-          </div>
-          <div class="paper-actions">
-            <a class="btn primary" href="SAUCF_final.pdf" target="_blank" rel="noopener">Open PDF</a>
-            <a class="btn" href="SAUCF_final.pdf" download>Download PDF</a>
-          </div>
-          <div class="paper-viewer" role="region" aria-label="Paper viewer">
-            <iframe
-              title="SAUCF Final Paper"
-              src="SAUCF_final.pdf#view=FitH"
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </section> -->
 
-      <!-- <section id="methodology" class="section">
+      <section id="methodology" class="section">
         <div class="container">
           <div class="section-header">
             <h2>Methodology</h2>
-            <p>High‑level description, diagrams, and key equations.</p>
+            <p>Comprehensive framework for natural-language-driven UAS mission management with integrated security and safety protocols.</p>
+            <div class="methodology-actions">
+              <a class="btn primary" href="methodology-detailed.html">View Detailed Methodology</a>
+            </div>
           </div>
+          
           <div class="grid two">
             <div>
-              <h3>Overview</h3>
+              <h3>System Architecture</h3>
               <p>
-                Summarize your approach: system architecture, algorithms, datasets, and
-                experimental setup. Replace the placeholder image with your pipeline diagram.
+                SAUCF employs a six-component pipeline integrating biometric authentication, 
+                natural language processing, automated mission planning, and supervised execution 
+                to enable secure, voice-driven agricultural UAS operations.
               </p>
               <ul class="key-points">
-                <li>System architecture and components</li>
-                <li>Core algorithmic contributions</li>
-                <li>Training/evaluation setup</li>
+                <li>Multi-modal biometric authentication (voice + face)</li>
+                <li>GPU-accelerated voice processing with Whisper ASR</li>
+                <li>LLM-powered intent parsing and mission generation</li>
+                <li>Human-in-the-loop mission approval and oversight</li>
+                <li>Real-time safety monitoring and manual override</li>
               </ul>
             </div>
             <figure class="media-card">
-              <img src="assets/media/pipeline-placeholder.png" alt="Methodology pipeline diagram placeholder" />
-              <figcaption>Replace with assets/media/pipeline.png or any diagram.</figcaption>
+              <img src="arch.png" alt="SAUCF System Architecture" />
+              <figcaption><strong>Figure 1:</strong> SAUCF System Architecture showing the complete pipeline from voice input to mission execution</figcaption>
             </figure>
           </div>
-        </div>
-      </section> -->
 
-      <!-- <section id="results" class="section alt">
-        <div class="container">
-          <div class="section-header">
-            <h2>Results</h2>
-            <p>Quantitative and qualitative results with figures.</p>
+          <div class="grid two">
+            <figure class="media-card">
+              <img src="hardware.png" alt="Hardware Integration" />
+              <figcaption><strong>Figure 2:</strong> Jetson Nano integrated with DJI M300 RTK for onboard processing</figcaption>
+            </figure>
+            <div>
+              <h3>Hardware & Integration</h3>
+              <p>
+                The system leverages an <strong>NVIDIA Jetson Nano</strong> companion computer 
+                integrated with the <strong>DJI Matrice 300 RTK</strong> via DJI's Onboard SDK. 
+                This setup enables real-time processing, secure communication, and autonomous execution.
+              </p>
+              <ul class="key-points">
+                <li>GPU-enabled companion computing for AI workloads</li>
+                <li>Serial communication via DJI E-Port interface</li>
+                <li>Multi-modal sensor integration (audio, video, telemetry)</li>
+                <li>Real-time mission execution and safety monitoring</li>
+              </ul>
+            </div>
           </div>
-          <div class="grid three">
+
+          <div class="grid two">
+            <div>
+              <h3>Safety & Decision Logic</h3>
+              <p>
+                SAUCF implements comprehensive safety protocols through decision tree-based 
+                safeguards, continuous telemetry monitoring, and human-in-the-loop oversight 
+                to ensure reliable and secure operations.
+              </p>
+              <ul class="key-points">
+                <li>Pre-flight validation (battery, GPS, payload status)</li>
+                <li>Continuous telemetry monitoring and safety guards</li>
+                <li>Automatic abort protocols and return-to-home sequences</li>
+                <li>Manual override capability at all stages</li>
+              </ul>
+            </div>
             <figure class="media-card">
-              <img src="assets/media/result-1.png" alt="Result figure placeholder 1" />
-              <figcaption>Result 1 caption</figcaption>
+              <img src="decision-tree.png" alt="Decision Tree Logic" />
+              <figcaption><strong>Figure 3:</strong> Decision tree for mission execution with integrated safety safeguards</figcaption>
             </figure>
+          </div>
+
+          <div class="grid two">
             <figure class="media-card">
-              <img src="assets/media/result-2.png" alt="Result figure placeholder 2" />
-              <figcaption>Result 2 caption</figcaption>
+              <img src="arch-detailed.png" alt="Detailed System Integration" />
+              <figcaption><strong>Figure 4:</strong> Detailed system integration and communication protocols</figcaption>
             </figure>
-            <figure class="media-card">
-              <img src="assets/media/result-3.png" alt="Result figure placeholder 3" />
-              <figcaption>Result 3 caption</figcaption>
-            </figure>
+            <div>
+              <h3>Implementation Stack</h3>
+              <p>
+                The framework combines multiple technologies in a cohesive software stack, 
+                from natural language processing to flight control, ensuring modularity 
+                and reliability across all system components.
+              </p>
+              <ul class="key-points">
+                <li><strong>ASR:</strong> Whisper running on GPU-accelerated hardware</li>
+                <li><strong>NLP:</strong> GPT-4 with function calling for intent parsing</li>
+                <li><strong>Mission Planning:</strong> Automated waypoint generation</li>
+                <li><strong>Flight Control:</strong> DJI OSDK with custom C++ applications</li>
+                <li><strong>Authentication:</strong> Kaizen Voiz biometric modules</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="methodology-summary">
+            <h3>Key Innovations</h3>
+            <div class="grid three">
+              <div class="innovation-card">
+                <h4>🗣️ Natural Language Interface</h4>
+                <p>Voice-driven mission control eliminates complex waypoint programming, making UAS operations accessible to non-technical users.</p>
+              </div>
+              <div class="innovation-card">
+                <h4>🔐 Dual-Factor Authentication</h4>
+                <p>Combined voice and face biometric verification ensures secure access while maintaining user convenience.</p>
+              </div>
+              <div class="innovation-card">
+                <h4>🧠 Human-in-the-Loop</h4>
+                <p>LLM-generated missions require explicit operator approval, preserving human authority and decision-making.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section> -->
 
       <section id="simulations" class="section">
         <div class="container">
