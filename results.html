@@ -189,6 +189,55 @@
               <li><strong>Path Adherence Rate:</strong> 99.8% within acceptable tolerance</li>
             </ul>
 
+            <h3>Detailed Waypoint Analysis</h3>
+            <p>
+              The following table presents the complete waypoint analysis from field testing, showing the precise GPS coordinates 
+              of planned versus actual flight paths. Each leg represents a specific waypoint in the mission trajectory, 
+              with offset distances calculated using the Haversine formula for great-circle distance between coordinates.
+            </p>
+            
+            <div class="waypoint-table-container">
+              <table class="waypoint-table">
+                <thead>
+                  <tr>
+                    <th>Leg</th>
+                    <th>Target Latitude</th>
+                    <th>Target Longitude</th>
+                    <th>Actual Latitude</th>
+                    <th>Actual Longitude</th>
+                    <th>Offset Distance (m)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>40.470297</td><td>-86.995236</td><td>40.470298</td><td>-86.995239</td><td>0.28</td></tr>
+                  <tr><td>2</td><td>40.470297</td><td>-86.995255</td><td>40.470299</td><td>-86.995248</td><td>0.63</td></tr>
+                  <tr><td>3</td><td>40.470297</td><td>-86.995368</td><td>40.470297</td><td>-86.995364</td><td>0.34</td></tr>
+                  <tr><td>4</td><td>40.470297</td><td>-86.995387</td><td>40.470296</td><td>-86.995380</td><td>0.60</td></tr>
+                  <tr><td>5</td><td>40.470322</td><td>-86.995387</td><td>40.470316</td><td>-86.995384</td><td>0.71</td></tr>
+                  <tr><td>6</td><td>40.470322</td><td>-86.995368</td><td>40.470321</td><td>-86.995377</td><td>0.77</td></tr>
+                  <tr><td>7</td><td>40.470322</td><td>-86.995255</td><td>40.470322</td><td>-86.995262</td><td>0.59</td></tr>
+                  <tr><td>8</td><td>40.470322</td><td>-86.995236</td><td>40.470323</td><td>-86.995243</td><td>0.60</td></tr>
+                  <tr><td>9</td><td>40.470348</td><td>-86.995236</td><td>40.470342</td><td>-86.995239</td><td>0.71</td></tr>
+                  <tr><td>10</td><td>40.470348</td><td>-86.995255</td><td>40.470349</td><td>-86.995252</td><td>0.28</td></tr>
+                  <tr><td>11</td><td>40.470348</td><td>-86.995368</td><td>40.470351</td><td>-86.995365</td><td>0.42</td></tr>
+                  <tr><td>12</td><td>40.470348</td><td>-86.995387</td><td>40.470349</td><td>-86.995387</td><td>0.11</td></tr>
+                  <tr><td>13</td><td>40.470373</td><td>-86.995387</td><td>40.470368</td><td>-86.995387</td><td>0.56</td></tr>
+                  <tr><td>14</td><td>40.470373</td><td>-86.995368</td><td>40.470371</td><td>-86.995375</td><td>0.63</td></tr>
+                  <tr><td>15</td><td>40.470301</td><td>-86.995233</td><td>40.470302</td><td>-86.995239</td><td>0.52</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="results-highlight">
+              <p><strong>Statistical Summary:</strong></p>
+              <ul class="key-points">
+                <li><strong>Best Performance:</strong> Leg 12 with only 0.11m deviation</li>
+                <li><strong>Largest Deviation:</strong> Leg 6 with 0.77m offset</li>
+                <li><strong>Median Deviation:</strong> 0.59m across all waypoints</li>
+                <li><strong>Sub-meter Accuracy:</strong> 100% of waypoints within 1.0m tolerance</li>
+              </ul>
+            </div>
+
             <h3>Sim-to-Real Transfer Validation</h3>
             <p>
               The consistency between simulation and field execution confirmed successful sim-to-real transfer, 

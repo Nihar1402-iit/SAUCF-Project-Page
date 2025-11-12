@@ -501,6 +501,105 @@ img, video, iframe { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
+/* Waypoint Analysis Table */
+.waypoint-table-container {
+  margin: 2rem 0;
+  overflow-x: auto;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.waypoint-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 700px;
+}
+
+.waypoint-table th {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.waypoint-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.waypoint-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.waypoint-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.waypoint-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.waypoint-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.waypoint-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.waypoint-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Highlight the offset distance column */
+.waypoint-table td:last-child {
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Color coding for offset distances */
+.waypoint-table tbody tr td:last-child {
+  background: rgba(34, 197, 94, 0.1);
+}
+
+/* Responsive table adjustments */
+@media (max-width: 760px) {
+  .waypoint-table-container {
+    margin: 1.5rem -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .waypoint-table {
+    font-size: 0.8rem;
+    min-width: 600px;
+  }
+  
+  .waypoint-table th,
+  .waypoint-table td {
+    padding: 0.5rem 0.4rem;
+  }
+  
+  .waypoint-table th {
+    font-size: 0.75rem;
+  }
+  
+  .waypoint-table td {
+    font-size: 0.75rem;
+  }
+}
+
 /* Mobile nav */
 @media (max-width: 760px) {
   .nav-toggle { display: inline-block; background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
