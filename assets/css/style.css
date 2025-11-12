@@ -418,10 +418,106 @@ img, video, iframe { max-width: 100%; display: block; }
   border: 1px solid var(--border);
 }
 
+/* Classification Performance Visualization */
+.image-container {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.methodology-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 0.5rem auto;
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+}
+
+.command-examples {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.command-examples h4 {
+  margin: 1.5rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.command-examples h4:first-child {
+  margin-top: 0;
+}
+
+.command-examples .key-points li {
+  padding: 0.3rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid #22c55e;
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.command-examples h4:nth-of-type(2) + .key-points li {
+  background: rgba(251, 146, 60, 0.1);
+  border-left-color: #fb923c;
+}
+
+.command-examples .results-highlight {
+  margin: 1rem 0;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.command-examples .results-highlight p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.command-examples .results-highlight p:first-child {
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* Enhanced grid layout for classification results */
+.grid.two > div h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 /* Mobile nav */
 @media (max-width: 760px) {
   .nav-toggle { display: inline-block; background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
   .nav-list { display: none; position: absolute; right: 16px; top: 56px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 8px; width: calc(100% - 32px); }
   .nav-list.open { display: block; }
   .nav-list li { margin: 6px 0; }
+
+  .command-examples {
+    padding: 1rem;
+  }
+  
+  .command-examples .key-points li {
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+  }
+  
+  .image-container {
+    padding: 0.75rem;
+  }
 }
