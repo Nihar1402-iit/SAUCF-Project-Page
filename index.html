@@ -24,9 +24,7 @@
             <li><a href="#overview">Overview</a></li>
             <!-- <li><a href="#paper">Paper</a></li> -->
             <li><a href="#methodology">Methodology</a></li>
-            <!-- <li><a href="#results">Results</a></li> -->
-            <li><a href="#simulations">Simulations</a></li>
-            <li><a href="#field-tests">On‑Field Tests</a></li>
+            <li><a href="#results">Results</a></li>
             <!-- <li><a href="#resources">Resources</a></li> -->
           </ul>
         </nav>
@@ -174,48 +172,110 @@
           </div>
         </div>
 
-      <section id="simulations" class="section">
+      <section id="results" class="section">
         <div class="container">
           <div class="section-header">
-            <h2>Simulations</h2>
-            <p>Simulation testing to validate the performance of SAUCF</p>
+            <h2>Results</h2>
+            <p>Comprehensive evaluation of SAUCF through simulation testing, field validation, and performance metrics analysis.</p>
+            <div class="methodology-actions">
+              <a class="btn primary" href="results.html">View Detailed Results</a>
+            </div>
           </div>
-          <div class="grid two">
-            <figure class="media-card">
-              <video controls preload="metadata" muted>
-                <source src="assets/videos/UAS Simulation Take Off.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span style="font-size: 16px; font-weight: bold;">UAS Simulation Take Off</span><br/>Natural language-driven takeoff sequence</figcaption>
-            </figure>
-            <figure class="media-card">
-              <video controls preload="metadata" muted>
-                <source src="assets/videos/Tracking Simulation on DJI Controller.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span style="font-size: 16px; font-weight: bold;">Tracking Simulation on DJI Controller</span><br/>Demonstrates real-time tracking capabilities</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
 
-      <section id="field-tests" class="section alt">
-        <div class="container">
-          <div class="section-header">
-            <h2>On‑Field Testing</h2>
-            <p>Real-world testing demonstrations. Unit testing of autonomous flight and safety protocols.</p>
+          <!-- Performance Metrics -->
+          <div class="results-overview">
+            <h3>Performance Metrics Summary</h3>
+            <div class="grid three">
+              <div class="metric-card">
+                <h4>⚡ Mission Planning Efficiency</h4>
+                <div class="metric-value">< 105 seconds</div>
+                <p>Total time from voice command to deployable waypoint plan including biometric verification</p>
+              </div>
+              <div class="metric-card">
+                <h4>🎯 Command Interpretation</h4>
+                <div class="metric-value">97.5% accuracy</div>
+                <p>Safety classification and intent parsing with 95.2% precision for safe commands</p>
+              </div>
+              <div class="metric-card">
+                <h4>🔐 Authentication Success</h4>
+                <div class="metric-value">80% acceptance</div>
+                <p>Multi-modal biometric verification with zero false positives for non-enrolled users</p>
+              </div>
+            </div>
           </div>
-          <div class="grid two">
-            <figure class="media-card">
-              <video controls preload="metadata" muted>
-                <source src="assets/videos/Unit Testing - Autonomous Takeoff and Landing.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span style="font-size: 16px; font-weight: bold;">Autonomous Takeoff and Landing</span><br/>Unit testing of core flight operations</figcaption>
-            </figure>
-            <figure class="media-card">
-              <video controls preload="metadata" muted>
-                <source src="assets/videos/Unit Testing - Return to Home.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span style="font-size: 16px; font-weight: bold;">Return to Home</span><br/>Unit testing Safety protocol</figcaption>
-            </figure>
+
+          <!-- Simulation Testing -->
+          <div class="results-section">
+            <h3>Simulation Testing</h3>
+            <p>Validation of SAUCF performance in controlled simulation environments using DJI Assistant 2 (Enterprise Edition)</p>
+            <div class="grid two">
+              <figure class="media-card">
+                <video controls preload="metadata" muted>
+                  <source src="assets/videos/UAS Simulation Take Off.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span style="font-size: 16px; font-weight: bold;">UAS Simulation Take Off</span><br/>Natural language-driven takeoff sequence demonstrating voice command processing</figcaption>
+              </figure>
+              <figure class="media-card">
+                <video controls preload="metadata" muted>
+                  <source src="assets/videos/Tracking Simulation on DJI Controller.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span style="font-size: 16px; font-weight: bold;">Tracking Simulation on DJI Controller</span><br/>Real-time tracking capabilities and mission execution monitoring</figcaption>
+              </figure>
+            </div>
+            <div class="results-highlight">
+              <p><strong>Key Findings:</strong> 100% decision tree compliance across all simulation trials with consistent safety check enforcement at each execution node.</p>
+            </div>
+          </div>
+
+          <!-- Field Testing -->
+          <div class="results-section">
+            <h3>On-Field Testing</h3>
+            <p>Real-world validation demonstrating sim-to-real transfer and operational reliability in agricultural environments</p>
+            <div class="grid two">
+              <figure class="media-card">
+                <video controls preload="metadata" muted>
+                  <source src="assets/videos/Unit Testing - Autonomous Takeoff and Landing.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span style="font-size: 16px; font-weight: bold;">Autonomous Takeoff and Landing</span><br/>Unit testing of core flight operations with safety protocol validation</figcaption>
+              </figure>
+              <figure class="media-card">
+                <video controls preload="metadata" muted>
+                  <source src="assets/videos/Unit Testing - Return to Home.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span style="font-size: 16px; font-weight: bold;">Return to Home Safety Protocol</span><br/>Emergency procedures and fail-safe mechanism testing</figcaption>
+              </figure>
+            </div>
+            <div class="results-highlight">
+              <p><strong>Execution Precision:</strong> Average waypoint deviation of 0.52 meters (σ = 0.19m) between planned and executed paths, confirming high-precision path adherence.</p>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="results-summary">
+            <h3>Validation Summary</h3>
+            <p>The experimental evaluation demonstrates that SAUCF successfully achieves:</p>
+            <div class="grid two">
+              <div>
+                <ul class="key-points">
+                  <li>Low-latency mission planning with secure operator verification</li>
+                  <li>Reliable natural language intent parsing and safety classification</li>
+                  <li>Robust execution consistency across simulation and field environments</li>
+                  <li>Effective human-in-the-loop oversight with manual override capabilities</li>
+                </ul>
+              </div>
+              <div>
+                <ul class="key-points">
+                  <li>Multi-modal biometric authentication with zero false positives</li>
+                  <li>Precise GPS trajectory adherence with sub-meter accuracy</li>
+                  <li>100% compliance with decision tree safety protocols</li>
+                  <li>Successful sim-to-real transfer of mission plans</li>
+                </ul>
+              </div>
+            </div>
+            <p class="results-conclusion">
+              These findings validate SAUCF's ability to deliver secure, operator-friendly, and mission-reliable agricultural UAS operations, 
+              significantly reducing technical barriers while maintaining safety and operational integrity.
+            </p>
           </div>
         </div>
       </section>

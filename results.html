@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results - Secure Agricultural UAS Control Framework (SAUCF)</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 40px auto;
+    max-width: 900px;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    color: #222;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    border-radius: 10px;
+  }
+  h2, h3 {
+    color: #003366;
+  }
+  h2 {
+    border-bottom: 3px solid #0055aa;
+    padding-bottom: 5px;
+  }
+  h3 {
+    margin-top: 30px;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+  strong {
+    color: #000;
+  }
+  .highlight {
+    background: #e9f5ff;
+    border-left: 4px solid #0078d4;
+    padding: 8px 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+  }
+</style>
+</head>
+<body>
+
+<h2>3. Results</h2>
+<p>
+The <strong>Secure Agricultural UAS Control Framework (SAUCF)</strong> was evaluated against the metrics outlined in Section 2.7.2. 
+Experimental validation included both simulation trials in <strong>DJI Assistant 2</strong> and field deployments using the <strong>DJI Matrice 300 RTK</strong> platform. 
+The results are summarized below.
+</p>
+
+<h3>3.1. Mission Planning Efficiency</h3>
+<p>
+The complete workflow comprised two major timing components: biometric verification and mission planning. 
+Voice verification averaged <strong>17.5 seconds</strong>, followed by face verification at <strong>14.7 seconds</strong>, resulting in a total authentication duration of approximately <strong>32.2 seconds</strong>. 
+This ensured secure operator validation before proceeding to mission execution.
+</p>
+<p>
+Following verification, the mission planning stage—from the initial natural language input to the generation of a deployable waypoint set—required <strong>72.8 seconds</strong> on average in our tests. 
+This included processing the uploaded shapefile, extracting field boundaries, and computing optimized flight paths.
+</p>
+<div class="highlight">
+  <strong>Overall:</strong> The total time from initial command input to finalized waypoint plan was <strong>under 105 seconds</strong>, 
+  demonstrating secure, operator-in-the-loop agricultural mission planning in near real-time.
+</div>
+
+<h3>3.2. Decision Tree Compliance</h3>
+<p>
+All executed missions adhered to the predefined behavior tree structure, with <strong>100% compliance</strong> across simulation and field trials. 
+Safety checks (battery, GPS lock, obstacle detection) were consistently enforced at each node, validating the reliability of the execution framework.
+</p>
+
+<h3>3.3. Command Interpretation Accuracy</h3>
+<p>
+To enhance operational safety, the LLM was fine-tuned with a <strong>safety classification layer</strong> capable of distinguishing between 
+SAFE and UNSAFE mission commands prior to intent parsing. Across 40 representative commands, the classifier achieved an overall <strong>97.5% accuracy</strong> 
+(<strong>95.2% precision</strong> and <strong>100% recall</strong> for SAFE, and <strong>100% precision</strong> and <strong>95.0% recall</strong> for UNSAFE).
+</p>
+<p>
+Only one misclassification occurred, where a command involving airport infrastructure was incorrectly labeled SAFE. 
+This additional layer ensures the system not only interprets intent correctly but also predicts whether the mission should begin at all—providing robust protection against unsafe or unauthorized operations.
+</p>
+
+<h3>3.4. Authentication Reliability</h3>
+<p>
+The multi-modal biometric authentication system was tested on a cohort of <strong>10 enrolled users</strong> and <strong>10 non-enrolled users</strong>. 
+As expected, none of the non-enrolled users were granted access. Among the enrolled users, <strong>8 out of 10</strong> were successfully verified, 
+corresponding to an effective acceptance rate of <strong>80%</strong>.
+</p>
+<p>
+Both the voice and face verification modules showed sensitivity to background interference. 
+In several cases, ambient speech or another person in the camera’s field of view reduced accuracy, leading to false rejections. 
+This highlights the need for controlled input conditions or noise-robust models to improve real-world reliability.
+</p>
+
+<h3>3.5. Execution Consistency</h3>
+<p>
+GPS trajectory analysis showed an average waypoint deviation of <strong>0.52 meters</strong> with a standard deviation of <strong>0.19 meters</strong> 
+between planned and executed paths in field trials, confirming precise path adherence.
+</p>
+
+<h3>3.6. Summary</h3>
+<p>
+Overall, the results demonstrate that <strong>SAUCF</strong> achieves:
+</p>
+<ul>
+  <li>Low-latency mission planning</li>
+  <li>Reliable intent parsing</li>
+  <li>Robust biometric authentication</li>
+  <li>Safe and consistent execution across simulation and field environments</li>
+</ul>
+<p>
+These findings validate the framework’s ability to deliver secure, operator-friendly, and mission-reliable agricultural UAS operations.
+</p>
+
+</body>
+</html>

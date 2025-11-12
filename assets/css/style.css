@@ -315,6 +315,109 @@ img, video, iframe { max-width: 100%; display: block; }
   margin-top: 1rem;
 }
 
+/* Results Section Styles */
+.results-overview {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.results-overview h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.metric-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0.5rem 0;
+}
+
+.metric-card p {
+  margin: 0.75rem 0 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.results-section {
+  margin: 3rem 0;
+}
+
+.results-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.results-highlight {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary)10, var(--card));
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+}
+
+.results-highlight p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.results-summary {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.results-summary h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.results-conclusion {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: 8px;
+  font-style: italic;
+  text-align: center;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
 /* Mobile nav */
 @media (max-width: 760px) {
   .nav-toggle { display: inline-block; background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
