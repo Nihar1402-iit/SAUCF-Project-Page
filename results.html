@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAUCF Results | Detailed Evaluation</title>
+    <meta name="description" content="Detailed results and evaluation for SAUCF: performance metrics, validation, and testing outcomes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#results">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" class="title">SAUCF</a>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+          <ul id="nav-menu" class="nav-list">
+            <li><a href="index.html#overview">Overview</a></li>
+            <li><a href="index.html#methodology">Methodology</a></li>
+            <li><a href="index.html#results">Results</a></li>
+            <li><a href="methodology-detailed.html">Detailed Methodology</a></li>
+            <li><a href="results.html" class="active">Detailed Results</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="results" class="section">
+        <div class="container">
+          <h1>📊 Results</h1>
+          <p class="lead">Comprehensive evaluation and validation of the Secure Agricultural UAS Control Framework (SAUCF)</p>
+
+          <div class="methodology-content">
+            <h2>Overview</h2>
+            <p>
+              The <strong>Secure Agricultural UAS Control Framework (SAUCF)</strong> was evaluated against comprehensive performance metrics 
+              through both simulation trials in <strong>DJI Assistant 2</strong> and field deployments using the <strong>DJI Matrice 300 RTK</strong> platform. 
+              The evaluation framework assessed mission planning efficiency, decision tree compliance, command interpretation accuracy, 
+              authentication reliability, and execution consistency across diverse operational scenarios.
+            </p>
+
+            <h2>🚀 Mission Planning Efficiency</h2>
+            <p>
+              The complete workflow comprised two major timing components: biometric verification and mission planning. 
+              Voice verification averaged <strong>17.5 seconds</strong>, followed by face verification at <strong>14.7 seconds</strong>, resulting in a total authentication duration of approximately <strong>32.2 seconds</strong>. 
+              This ensured secure operator validation before proceeding to mission execution.
+            </p>
+            <p>
+              Following verification, the mission planning stage—from the initial natural language input to the generation of a deployable waypoint set—required <strong>72.8 seconds</strong> on average in our tests. 
+              This included processing the uploaded shapefile, extracting field boundaries, and computing optimized flight paths.
+            </p>
+
+            <div class="results-highlight">
+              <p><strong>Overall Performance:</strong> The total time from initial command input to finalized waypoint plan was <strong>under 105 seconds</strong>, 
+              demonstrating secure, operator-in-the-loop agricultural mission planning in near real-time.</p>
+            </div>
+
+            <h2>✅ Decision Tree Compliance</h2>
+            <p>
+              All executed missions adhered to the predefined behavior tree structure, with <strong>100% compliance</strong> across simulation and field trials. 
+              Safety checks (battery, GPS lock, obstacle detection) were consistently enforced at each node, validating the reliability of the execution framework.
+            </p>
+            <ul class="key-points">
+              <li>Pre-flight validation checks: 100% execution rate</li>
+              <li>In-flight safety monitoring: Continuous enforcement</li>
+              <li>Emergency procedures: Consistent activation when required</li>
+              <li>Return-to-home protocols: 100% success rate</li>
+            </ul>
+
+            <h2>🎯 Command Interpretation Accuracy</h2>
+            <h3>Safety Classification Performance</h3>
+            <p>
+              To enhance operational safety, the LLM was fine-tuned with a <strong>safety classification layer</strong> capable of distinguishing between 
+              SAFE and UNSAFE mission commands prior to intent parsing. Across 40 representative commands, the classifier achieved an overall <strong>97.5% accuracy</strong> 
+              with detailed performance metrics:
+            </p>
+            <ul class="key-points">
+              <li><strong>SAFE Commands:</strong> 95.2% precision, 100% recall</li>
+              <li><strong>UNSAFE Commands:</strong> 100% precision, 95.0% recall</li>
+              <li><strong>Misclassification Rate:</strong> 2.5% (1 out of 40 commands)</li>
+              <li><strong>Critical Safety:</strong> Zero false negatives for high-risk scenarios</li>
+            </ul>
+
+            <h3>Intent Parsing Validation</h3>
+            <p>
+              Only one misclassification occurred, where a command involving airport infrastructure was incorrectly labeled SAFE. 
+              This additional layer ensures the system not only interprets intent correctly but also predicts whether the mission should begin at all—providing robust protection against unsafe or unauthorized operations.
+            </p>
+
+            <h2>🔐 Authentication Reliability</h2>
+            <h3>Multi-Modal Biometric Performance</h3>
+            <p>
+              The multi-modal biometric authentication system was tested on a cohort of <strong>10 enrolled users</strong> and <strong>10 non-enrolled users</strong>. 
+              The system demonstrated robust security performance with zero false positives while maintaining acceptable usability metrics.
+            </p>
+            <ul class="key-points">
+              <li><strong>False Acceptance Rate (FAR):</strong> 0% (0/10 non-enrolled users granted access)</li>
+              <li><strong>True Acceptance Rate (TAR):</strong> 80% (8/10 enrolled users successfully verified)</li>
+              <li><strong>False Rejection Rate (FRR):</strong> 20% (2/10 enrolled users rejected)</li>
+              <li><strong>Security Integrity:</strong> 100% prevention of unauthorized access</li>
+            </ul>
+
+            <h3>Environmental Sensitivity Analysis</h3>
+            <p>
+              Both the voice and face verification modules showed sensitivity to background interference. 
+              In several cases, ambient speech or another person in the camera's field of view reduced accuracy, leading to false rejections. 
+              This highlights the need for controlled input conditions or noise-robust models to improve real-world reliability.
+            </p>
+
+            <h2>📍 Execution Consistency</h2>
+            <h3>GPS Trajectory Precision</h3>
+            <p>
+              GPS trajectory analysis demonstrated exceptional path adherence with sub-meter accuracy, validating the precision of the mission execution system.
+            </p>
+            <ul class="key-points">
+              <li><strong>Average Waypoint Deviation:</strong> 0.52 meters</li>
+              <li><strong>Standard Deviation:</strong> 0.19 meters</li>
+              <li><strong>Maximum Deviation:</strong> < 1.0 meter across all trials</li>
+              <li><strong>Path Adherence Rate:</strong> 99.8% within acceptable tolerance</li>
+            </ul>
+
+            <h3>Sim-to-Real Transfer Validation</h3>
+            <p>
+              The consistency between simulation and field execution confirmed successful sim-to-real transfer, 
+              with minimal deviation between planned trajectories in DJI Assistant 2 and actual field performance.
+            </p>
+
+            <h2>📈 Performance Summary</h2>
+            <p>
+              The comprehensive evaluation demonstrates that <strong>SAUCF</strong> successfully achieves its design objectives 
+              across all critical performance dimensions:
+            </p>
+
+            <div class="grid two">
+              <div>
+                <h3>Operational Efficiency</h3>
+                <ul class="key-points">
+                  <li>Low-latency mission planning (< 105 seconds)</li>
+                  <li>Real-time authentication and verification</li>
+                  <li>Streamlined operator workflow</li>
+                  <li>Minimal technical expertise requirements</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Safety & Reliability</h3>
+                <ul class="key-points">
+                  <li>100% decision tree compliance</li>
+                  <li>Zero false positive authentication</li>
+                  <li>Sub-meter execution precision</li>
+                  <li>Robust safety protocol enforcement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="results-highlight">
+              <p><strong>Validation Outcome:</strong> These findings validate SAUCF's ability to deliver secure, operator-friendly, 
+              and mission-reliable agricultural UAS operations, significantly reducing technical barriers while maintaining 
+              operational safety and mission integrity.</p>
+            </div>
+
+            <h2>🔬 Future Improvements</h2>
+            <p>
+              Based on the evaluation results, several areas for enhancement have been identified:
+            </p>
+            <ul class="key-points">
+              <li><strong>Authentication Robustness:</strong> Improve noise tolerance in biometric verification systems</li>
+              <li><strong>Environmental Adaptation:</strong> Enhanced performance under varying lighting and acoustic conditions</li>
+              <li><strong>Scalability Testing:</strong> Validation with larger user cohorts and diverse agricultural scenarios</li>
+              <li><strong>Long-term Reliability:</strong> Extended field trials to assess system durability and consistency</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> SAUCF Project. Built with GitHub Pages.
+          <a href="index.html" style="margin-left: 1rem;">← Back to Main Page</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
